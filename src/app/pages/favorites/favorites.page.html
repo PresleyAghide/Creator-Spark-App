@@ -1,0 +1,27 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Favorites ⭐</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <h2>Your Saved Ideas</h2>
+
+  <ion-card *ngFor="let idea of favorites; let i = index" style="margin-bottom: 15px;">
+    <ion-card-header>
+      <ion-card-title>{{ idea.title }}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      {{ idea.body }}
+    </ion-card-content>
+
+    <ion-button color="danger" expand="block" (click)="removeIdea(i)">
+      Delete ❌
+    </ion-button>
+  </ion-card>
+
+  <p *ngIf="favorites.length === 0">
+    No favorites saved yet.
+  </p>
+</ion-content>

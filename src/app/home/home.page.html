@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Creator Spark 🔥</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <h2>Welcome {{ userName || 'Creator' }} ⚡</h2>
+  <p>Find and save content ideas for TikTok, YouTube, and Instagram.</p>
+
+  <ion-button expand="block" routerLink="/favorites">Favorites ⭐</ion-button>
+  <ion-button expand="block" routerLink="/settings">Settings ⚙️</ion-button>
+  <ion-button expand="block" routerLink="/about">About 📄</ion-button>
+
+  <h2>Content Ideas</h2>
+
+  <ion-card *ngFor="let idea of ideas">
+    <ion-card-header>
+      <ion-card-title>{{ idea.title }}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      {{ idea.body }}
+    </ion-card-content>
+
+    <ion-button expand="block" (click)="saveIdea(idea)">
+      Save ⭐
+    </ion-button>
+
+    <ion-button expand="block" [routerLink]="['/idea-details']" [state]="{ idea: idea }">
+      View Details 💡
+    </ion-button>
+  </ion-card>
+</ion-content>

@@ -1,0 +1,37 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Settings ⚙️</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+
+  <ion-item>
+    <ion-label position="stacked">Your Name</ion-label>
+    <ion-input [(ngModel)]="name"></ion-input>
+  </ion-item>
+
+  <ion-item>
+    <ion-label position="stacked">Preferred Platform</ion-label>
+    <ion-select [(ngModel)]="platform">
+      <ion-select-option value="TikTok">TikTok</ion-select-option>
+      <ion-select-option value="YouTube">YouTube</ion-select-option>
+      <ion-select-option value="Instagram">Instagram</ion-select-option>
+    </ion-select>
+  </ion-item>
+
+  <ion-item>
+    <ion-label>Dark Mode</ion-label>
+    <ion-toggle [(ngModel)]="darkMode"></ion-toggle>
+  </ion-item>
+
+  <ion-button expand="block" (click)="saveSettings()">
+    Save Settings 💾
+  </ion-button>
+
+  <h3>Your Settings:</h3>
+  <p>Name: {{ name }}</p>
+  <p>Platform: {{ platform }}</p>
+  <p>Dark Mode: {{ darkMode }}</p>
+
+</ion-content>

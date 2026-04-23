@@ -1,0 +1,12 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Idea Details 💡</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="ion-padding">
+  <h2 *ngIf="idea">{{ idea.title }}</h2>
+  <p *ngIf="idea">{{ idea.body }}</p>
+
+  <p *ngIf="!idea">No idea selected.</p>
+</ion-content>

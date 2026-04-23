@@ -1,0 +1,7 @@
+{
+  "name": "creator-spark",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular-standalone"
+}
